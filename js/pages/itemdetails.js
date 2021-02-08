@@ -132,11 +132,7 @@ const getCurrentValidAssetUrl = async (assetId, assetTypeId) => currentValidAsse
 		// Special case to stop people from using BTR to steal clothing
 		// Only be valid if owned by roblox or configure exists
 
-		itemCont.$watch(".item-name-container a", creatorLink => {
-			if(creatorLink.href.match(/\/users\/1\//)) {
-				resolve(defaultAssetUrl)
-			}
-		})
+		resolve(defaultAssetUrl)
 
 		itemCont.$watch("#configure-item", () => resolve(defaultAssetUrl))
 		
